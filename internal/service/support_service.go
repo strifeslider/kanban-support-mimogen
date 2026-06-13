@@ -7,17 +7,16 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/user/kanban-saas/pkg/model"
-	"github.com/user/kanban-saas/services/support/internal/repository"
 )
 
 type SupportService struct {
-	ticketRepo *repository.TicketRepository
-	agentRepo  *repository.AgentRepository
+	ticketRepo TicketRepository
+	agentRepo  AgentRepository
 }
 
 func NewSupportService(
-	ticketRepo *repository.TicketRepository,
-	agentRepo *repository.AgentRepository,
+	ticketRepo TicketRepository,
+	agentRepo AgentRepository,
 ) *SupportService {
 	return &SupportService{
 		ticketRepo: ticketRepo,
